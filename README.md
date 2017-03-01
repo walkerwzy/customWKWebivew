@@ -41,7 +41,7 @@ a customer UIViewController with a WKWebview, which handle most js-native mutual
 ```
 
 # html
-see
+every messageHandlers passed to page wraped in a `appBridge` object
 ```
         <button onclick="alert(1);">alert</button><br>
         <button onclick="alert(confirm('ok?'));">confirm</button><br>
