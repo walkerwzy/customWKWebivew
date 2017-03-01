@@ -234,15 +234,4 @@ NSString * const kWebKitMessageHandler      = @"method";
     [self.webView setUIDelegate:nil];
 }
 
-- (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler{
-    NSLog(@"runJavaScriptAlertPanelWithMessage:%@", message);
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:message preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        NSLog(@"runJavaScriptAlertPanelWithMessage:%@, did clicked", message);
-    }];
-    [alert addAction:action];
-    completionHandler();
-    [self presentViewController:alert animated:YES completion:nil];
-}
-
 @end
