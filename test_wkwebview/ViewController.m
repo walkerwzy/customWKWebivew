@@ -20,6 +20,7 @@
     urlPatternAction actionA = ^void(NSURL *url) {
         NSLog(@"aaaaa, %@", url);
     };
+
     urlPatternAction actionB = ^void(NSURL *url) {
         NSLog(@"bbbb, %@", url);
     };
@@ -29,7 +30,7 @@
     
     self.urlPatterns = [NSArray arrayWithObjects:
                               @{kWebKitUrlPatternKey: @".*baidu.*", kWebKitUrlPatternBlock: actionA},
-                              @{kWebKitUrlPatternKey: @"sohu", kWebKitUrlPatternBlock: actionB},
+                              @{kWebKitUrlPatternKey: @"sohus", kWebKitUrlPatternBlock: actionB},
                               @{kWebKitUrlPatternKey: @"sina", kWebKitUrlPatternBlock: actionC},
                               nil];
     
@@ -58,5 +59,6 @@
 //    NSLog(@"enter");
 //    decisionHandler(WKNavigationActionPolicyAllow);
 //}
+
 
 @end

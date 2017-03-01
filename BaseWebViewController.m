@@ -146,8 +146,7 @@ NSString * const kWebKitMessageHandler      = @"method";
     decisionHandler(WKNavigationActionPolicyAllow);
 }
 
-/*! @abstract Decides whether to allow or cancel a navigation after its
- response is known.
+/*! @abstract Decides whether to allow or cancel a navigation after its response is known.
  */
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler{
     NSLog(@"decidePolicyForNavigationResponse:%@", navigationResponse.response);
@@ -172,18 +171,21 @@ NSString * const kWebKitMessageHandler      = @"method";
  */
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error{
     NSLog(@"didFailProvisionalNavigation:error:%@", error);
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 }
 
 /*! @abstract Invoked when content starts arriving for the main frame.
  */
 - (void)webView:(WKWebView *)webView didCommitNavigation:(null_unspecified WKNavigation *)navigation{
     NSLog(@"didCommitNavigation");
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
 }
 
 /*! @abstract Invoked when a main frame navigation completes.
  */
 - (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation{
     NSLog(@"didFinishNavgation");
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 }
 
 /*! @abstract Invoked when an error occurs during a committed main frame
@@ -191,12 +193,14 @@ NSString * const kWebKitMessageHandler      = @"method";
  */
 - (void)webView:(WKWebView *)webView didFailNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error{
     NSLog(@"didFailNavigation:error%@", error);
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 }
 
 /*! @abstract Invoked when the web view's web content process is terminated.
  */
 - (void)webViewWebContentProcessDidTerminate:(WKWebView *)webView {
     NSLog(@"webViewWebContentProcessDidTerminate");
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 }
 
 #pragma mark - WKWebview KVO
