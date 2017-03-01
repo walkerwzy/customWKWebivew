@@ -108,6 +108,12 @@ NSString * const kWebKitMessageHandler      = @"method";
                                                                             forMainFrameOnly:YES]];
         }
         
+        // preference
+//        WKPreferences *preferences = [WKPreferences new];
+//        preferences.javaScriptCanOpenWindowsAutomatically = YES;
+//        preferences.minimumFontSize = 30.0;
+//        config.preferences = preferences;
+        
         // init
         CGRect frame = [[UIScreen mainScreen] bounds];
         _webView = [[WKWebView alloc] initWithFrame:frame configuration:config];
@@ -116,7 +122,7 @@ NSString * const kWebKitMessageHandler      = @"method";
         [_webView addObserver:self forKeyPath:NSStringFromSelector(@selector(estimatedProgress)) options:NSKeyValueObservingOptionNew context:NULL];
         [self.view addSubview:_webView];
         if(!self.progressView) {
-           self.progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleBar]; 
+           self.progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleBar];
         }
         [_webView addSubview:self.progressView];
     }
