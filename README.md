@@ -16,6 +16,7 @@ a customer UIViewController with a WKWebview, which handle most js-native mutual
         NSLog(@"ccc, %@", url);
     };
     // pass url-action pairs
+    // url pattern can be plain string or regex
     self.urlPatterns = [NSArray arrayWithObjects:
                               @{kWebKitUrlPatternKey: @".*baidu.*", kWebKitUrlPatternBlock: actionA},
                               @{kWebKitUrlPatternKey: @"sohu", kWebKitUrlPatternBlock: actionB},
