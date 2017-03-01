@@ -13,10 +13,10 @@
 		5D0081FD1E4C24BC00E32606 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D0081FB1E4C24BC00E32606 /* Main.storyboard */; };
 		5D0081FF1E4C24BC00E32606 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D0081FE1E4C24BC00E32606 /* Assets.xcassets */; };
 		5D0082021E4C24BC00E32606 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D0082001E4C24BC00E32606 /* LaunchScreen.storyboard */; };
-		5D00820B1E4C24D900E32606 /* BaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D00820A1E4C24D900E32606 /* BaseWebViewController.m */; };
 		5D610DE91E5FDE2400025C53 /* WKWebViewUIDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D610DE81E5FDE2400025C53 /* WKWebViewUIDelegate.m */; };
 		5D610DEC1E5FE4CC00025C53 /* NewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D610DEB1E5FE4CC00025C53 /* NewViewController.m */; };
 		5D7633EF1E6567CF003DA701 /* WKWebViewScriptMessageHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7633EE1E6567CF003DA701 /* WKWebViewScriptMessageHandler.m */; };
+		5D7633F21E66DDCD003DA701 /* BaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7633F11E66DDCD003DA701 /* BaseWebViewController.m */; };
 		5D77970F1E4C281400757B9C /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 5D77970E1E4C281400757B9C /* index.html */; };
 /* End PBXBuildFile section */
 
@@ -31,14 +31,14 @@
 		5D0081FE1E4C24BC00E32606 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D0082011E4C24BC00E32606 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D0082031E4C24BC00E32606 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5D0082091E4C24D900E32606 /* BaseWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseWebViewController.h; path = ../BaseWebViewController.h; sourceTree = "<group>"; };
-		5D00820A1E4C24D900E32606 /* BaseWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseWebViewController.m; path = ../BaseWebViewController.m; sourceTree = "<group>"; };
 		5D610DE71E5FDE2400025C53 /* WKWebViewUIDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebViewUIDelegate.h; sourceTree = "<group>"; };
 		5D610DE81E5FDE2400025C53 /* WKWebViewUIDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKWebViewUIDelegate.m; sourceTree = "<group>"; };
 		5D610DEA1E5FE4CC00025C53 /* NewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewViewController.h; sourceTree = "<group>"; };
 		5D610DEB1E5FE4CC00025C53 /* NewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewViewController.m; sourceTree = "<group>"; };
 		5D7633ED1E6567CF003DA701 /* WKWebViewScriptMessageHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebViewScriptMessageHandler.h; sourceTree = "<group>"; };
 		5D7633EE1E6567CF003DA701 /* WKWebViewScriptMessageHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKWebViewScriptMessageHandler.m; sourceTree = "<group>"; };
+		5D7633F01E66DDCD003DA701 /* BaseWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseWebViewController.h; sourceTree = "<group>"; };
+		5D7633F11E66DDCD003DA701 /* BaseWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseWebViewController.m; sourceTree = "<group>"; };
 		5D77970E1E4C281400757B9C /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,8 +72,8 @@
 		5D0081F11E4C24BC00E32606 /* test_wkwebview */ = {
 			isa = PBXGroup;
 			children = (
-				5D0082091E4C24D900E32606 /* BaseWebViewController.h */,
-				5D00820A1E4C24D900E32606 /* BaseWebViewController.m */,
+				5D7633F01E66DDCD003DA701 /* BaseWebViewController.h */,
+				5D7633F11E66DDCD003DA701 /* BaseWebViewController.m */,
 				5D7633ED1E6567CF003DA701 /* WKWebViewScriptMessageHandler.h */,
 				5D7633EE1E6567CF003DA701 /* WKWebViewScriptMessageHandler.m */,
 				5D610DE71E5FDE2400025C53 /* WKWebViewUIDelegate.h */,
@@ -176,8 +176,8 @@
 			files = (
 				5D0081FA1E4C24BC00E32606 /* ViewController.m in Sources */,
 				5D7633EF1E6567CF003DA701 /* WKWebViewScriptMessageHandler.m in Sources */,
+				5D7633F21E66DDCD003DA701 /* BaseWebViewController.m in Sources */,
 				5D0081F71E4C24BC00E32606 /* AppDelegate.m in Sources */,
-				5D00820B1E4C24D900E32606 /* BaseWebViewController.m in Sources */,
 				5D610DEC1E5FE4CC00025C53 /* NewViewController.m in Sources */,
 				5D610DE91E5FDE2400025C53 /* WKWebViewUIDelegate.m in Sources */,
 				5D0081F41E4C24BC00E32606 /* main.m in Sources */,
