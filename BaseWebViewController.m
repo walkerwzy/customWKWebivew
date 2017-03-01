@@ -18,7 +18,6 @@ NSString * const kWebKitMessageHandler      = @"method";
 @interface BaseWebViewController ()<WKUIDelegate, WKNavigationDelegate>
 @property (nonatomic, strong) UIProgressView *progressView;
 @property (nonatomic, strong) WKWebViewUIDelegate *UIDelegate;
-@property (nonatomic, strong) NSMutableArray<WKWebViewScriptMessageHandler *> *messageHandlerObjs;
 @end
 
 @implementation BaseWebViewController
@@ -91,12 +90,10 @@ NSString * const kWebKitMessageHandler      = @"method";
         // script message handler
         if(self.messageHandlers.count > 0) {
             NSMutableString *appBridge = [NSMutableString stringWithString:@"var appBridge={};\n"];
-            _messageHandlerObjs = [NSMutableArray arrayWithCapacity:self.messageHandlers.count];
             [self.messageHandlers enumerateObjectsUsingBlock:^(NSDictionary * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                 NSString *title = [obj objectForKey:kWebKitMessageTitle];
                 messageHandler handler = [obj objectForKey:kWebKitMessageHandler];
                 WKWebViewScriptMessageHandler *handlerObj = [[WKWebViewScriptMessageHandler alloc] initWithAction:handler];
-                [self.messageHandlerObjs addObject:handlerObj]; // retrain it.
                 [config.userContentController addScriptMessageHandler:handlerObj name:title];
                 
                 // 为了使用方便, 以及与可能的安卓版调用方式一致, 把方法调用封装一下

@@ -30,7 +30,7 @@
     
     self.urlPatterns = [NSArray arrayWithObjects:
                               @{kWebKitUrlPatternKey: @".*baidu.*", kWebKitUrlPatternBlock: actionA},
-                              @{kWebKitUrlPatternKey: @"sohus", kWebKitUrlPatternBlock: actionB},
+                              @{kWebKitUrlPatternKey: @"sohu", kWebKitUrlPatternBlock: actionB},
                               @{kWebKitUrlPatternKey: @"sina", kWebKitUrlPatternBlock: actionC},
                               nil];
     
