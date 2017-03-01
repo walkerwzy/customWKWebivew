@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=2" />
+        <title>Document</title>
+        <style>
+            body{padding: 50px; font-size:24px;};
+            button{height: 30px; width: 80px; margin-top:15px; display:inline-block;}
+        </style>
+    </head>
+    <body>
+        <button onclick="alert(1);">alert</button><br>
+        <button onclick="alert(confirm('ok?'));">confirm</button><br>
+        <button onclick="alert(prompt('please input', 'abc'));">text</button><br>
+        <a href="http://www.baidu.com">baidu</a><br/>
+        <a href="http://www.sina.com.cn">sina</a><br/>
+        <a href="http://www.sohu.com">sohu</a><br/>
+        <button onclick="window.webkit.messageHandlers.m1.postMessage({title1:'111', 'title2':'bbb','title3':3333});">本地方法1</button><br/>
+        <button onclick="appBridge.m1({'name':'hello', 'value':'world'});">封装后的调法</button>
+    </body>
+</html>
