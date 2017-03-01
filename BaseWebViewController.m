@@ -16,7 +16,6 @@ NSString * const kWebKitMessageTitle        = @"title";
 NSString * const kWebKitMessageHandler      = @"method";
 
 @interface BaseWebViewController ()<WKUIDelegate, WKNavigationDelegate>
-@property (nonatomic, strong) UIProgressView *progressView;
 @property (nonatomic, strong) WKWebViewUIDelegate *UIDelegate;
 @end
 
@@ -116,12 +115,13 @@ NSString * const kWebKitMessageHandler      = @"method";
         _webView.navigationDelegate = self;
         [_webView addObserver:self forKeyPath:NSStringFromSelector(@selector(estimatedProgress)) options:NSKeyValueObservingOptionNew context:NULL];
         [self.view addSubview:_webView];
-        self.progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleBar];
+        if(!self.progressView) {
+           self.progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleBar]; 
+        }
         [_webView addSubview:self.progressView];
     }
     return _webView;
 }
-
 
 #pragma mark - navigation delegate
 

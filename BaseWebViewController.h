@@ -28,6 +28,7 @@ typedef void (^messageHandler)(WKScriptMessage *);
 @property (nonatomic, copy)   void (^modifyRequest)(NSMutableURLRequest *); // 如果要修改 header 等, 在此做
 @property (nonatomic, strong) NSArray<NSDictionary *> *urlPatterns;         // 需要拦截的请求和拦截后的行为组
 @property (nonatomic, strong) NSArray<NSDictionary *> *messageHandlers;     // 需要开放给 js 的本地方法组
+@property (nonatomic, strong) UIProgressView *progressView;
 - (void)loadPage;
 
 @end
