@@ -31,6 +31,7 @@ a customer UIViewController with a WKWebview, which handle most js-native mutual
     // pass name-action pairs
     self.messageHandlers = @[@{kWebKitMessageTitle: @"m1", kWebKitMessageHandler: method1},
                              @{kWebKitMessageTitle: @"log1", kWebKitMessageHandler: log}];
+    // it's also more easy to add start/end js code
     self.headerJS = @"alert('header js invoked');";
     self.footerJS = @"appBridge.log1('footer js invoked');";
     // you can load url, file, string by setting property
